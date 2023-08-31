@@ -1,0 +1,17 @@
+{% extends 'default.html' %}
+
+
+{% block title %} Поиск {% endblock title %}
+{% block content %}
+<center>
+<form method='GET'>
+    {{ filter.form }}
+    <input type="submit" value="Найти">
+</form>
+    {% for pst in filter.qs %}
+        <br>
+        {{ pst.title }}
+        <br>
+    {% endfor %}
+</center>
+{% endblock content %}

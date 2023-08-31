@@ -1,0 +1,14 @@
+{% extends 'default.html' %}
+{% load custom_filters %}
+
+{% block title %} Новости {% endblock title%}
+
+{% block content %}
+<center>
+<h3>{{onenews.title|censor}}</h3>
+<h5>{{onenews.time_create|date:'d M Y h:m'}}</h5>
+{{onenews.text|censor}}
+<hr>
+Автор: <i>{{onenews.author.author}}</i>
+</center>
+{% endblock content %}
